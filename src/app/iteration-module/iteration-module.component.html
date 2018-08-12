@@ -1,0 +1,111 @@
+<div class="row color-light" style="border-bottom-style: groove">
+<table style="margin-bottom: 5px">
+<tr>
+  <td>Pick an Iteration Id  </td>
+  <td>
+    <form>
+    <select  class="color-light"  (change)="pickAnIteration()" [(ngModel)]="iterationId" name="iteration">
+    <option value="">-Select-</option>
+    <option value="10001">10001</option>
+    <option value="10002">10002</option>
+    <option value="10003">10003</option>
+    <option value="10004">10004</option>
+  </select>
+</form>
+</td>
+
+</tr>
+  </table>
+
+</div>
+
+<div class="row"></div>
+<div class="row"></div>
+<br>
+
+<table style="border-style: solid">
+    <tr style="border-style: solid">
+    <td rowspan="2" style="border-style: solid">{{iterationId}}</td>
+    <td style="border-style: solid">Container</td>
+    <td style="border-style: solid">Engine</td>
+    <td style="border-style: solid">Distributor</td>
+    <td style="border-style: solid">Filegen</td>    
+  </tr>
+
+  <tr style="border-style: solid">
+     
+      <td style="background-color: green;border-style: solid">  Done         </td>
+      <td style="background-color: green;border-style: solid"> Done</td>
+      <td style="border-style: solid;background-color: orange;"> In Progress</td>
+      <td style="border-style: solid;background-color: palevioletred;">  Pending</td>    
+    </tr>
+  </table>  
+
+
+  <div class="row"></div>
+<div class="row"></div>
+<br>
+
+<!--Ecorr Details starts-->
+<div class="row color-light" style="border-bottom-style: groove">
+  Ecorr Details
+  </div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <br>
+<table style="border-style: solid">
+    <tr style="border-style: solid">
+        <td style="border-style: solid">Invoice Seq ID</td>
+    <td  style="border-style: solid">Account ID</td>
+    <td style="border-style: solid">OOB rule</td>
+    <td style="border-style: solid">OOB Amount</td>
+    <td style="border-style: solid">LHS Amount</td>
+    <td style="border-style: solid">RHS Amount</td>    
+  </tr>
+
+  
+  <tr style="border-style:solid" *ngFor="let ecorrAccount of ecorrAccounts">
+     
+      <td style="border-style: solid"> {{ecorrAccount.invoiceSeqId}} </td>
+      <td style="border-style: solid"> {{ecorrAccount.accountId}} </td>
+      <td style="border-style: solid"> {{ecorrAccount.oobRule}}</td>
+      <td style="border-style: solid"> {{ecorrAccount.oobAmount}}</td>
+      <td style="border-style: solid"> {{ecorrAccount.lhsAmount}}</td>    
+      <td style="border-style: solid"> {{ecorrAccount.rhsAmount}}</td>  
+    </tr>
+  </table> 
+
+
+<!--Ecorr Details starts-->
+
+
+<div class="row"></div>
+<div class="row"></div>
+<br>
+<!--Fallout Details starts-->
+<div class="row color-light" style="border-bottom-style: groove">
+  Fallout Details
+  </div>
+  <div class="row"></div>
+  <div class="row"></div>
+  <br>
+<table style="border-style: solid">
+    <tr style="border-style: solid">
+      <td style="border-style: solid">Invoice Seq ID</td>
+    <td  style="border-style: solid">Account ID</td>
+    <td style="border-style: solid">Fallout Reason</td>    
+  </tr>
+
+  
+  <tr style="border-style:solid" *ngFor="let fallout of falloutAccounts">
+     
+      <td style="border-style: solid"> {{fallout.invoiceSeqId}}</td>
+      <td style="border-style: solid"> {{fallout.accountId}} </td>
+      <td style="border-style: solid"> {{fallout.falloutReason}}</td>
+      
+  
+    </tr>
+  </table> 
+
+
+<!--Fallout Details starts-->

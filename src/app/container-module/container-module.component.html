@@ -1,0 +1,196 @@
+
+  <div class="row">
+
+    <!--Container Module starts-->
+    <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+      <h3>Container</h3>
+      <div  *ngFor="let iteration of iterationids" >
+        <div *ngIf="iteration.status == 'Completed';else inprogress">
+        
+        <img src="../../assets/images/completed.png" style="max-height: 20px"> 
+       
+        <a  href="#" class="col-xs-20" (click)="sendMetoIteration(iteration.iterationid)" routerLink="iteration/10001"
+        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        {{iteration.iterationid}} 
+      </a>
+    
+      </div>
+      <ng-template #inprogress>
+          <div >
+              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <a  href="" class="col-xs-20"
+              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              {{iteration.iterationid}} 
+            </a>
+            </div>
+      </ng-template> 
+    
+    
+  </div>
+  </div> <!--Container Module ends-->
+
+  
+  <!--Engine Module starts-->
+  <div style="height:100px;width:100px"></div>
+  <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+      <h3>Engine</h3>
+      <div  *ngFor="let iteration of iterationids">
+        <div *ngIf="iteration.status == 'Completed';else inprogress">
+        <img src="../../assets/images/completed.png" style="max-height: 20px">      
+        <a  href="" class="col-xs-20"
+        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        {{iteration.iterationid}} 
+      </a>
+      </div>
+      <ng-template #inprogress>
+          <div >
+              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <a  href="" class="col-xs-20"
+              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              {{iteration.iterationid}} 
+            </a>
+            </div>
+      </ng-template>
+      <div >
+    </div>
+    
+  </div>
+  </div>
+  
+  <!--Engine Module ends-->
+
+
+  
+  <!--Distributor Module starts-->
+  <div style="height:100px;width:100px"></div>
+  <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+      <h3>Distributor</h3>
+      <div  *ngFor="let iteration of iterationids">
+        <div *ngIf="iteration.status == 'Completed';else inprogress">
+        <img src="../../assets/images/completed.png" style="max-height: 20px">      
+        <a   class="col-xs-20" (click)="sendMetoIteration(iteration.iterationid)"
+        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        {{iteration.iterationid}} 
+      </a>
+      </div>
+      <ng-template #inprogress>
+          <div >
+              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <a  href="" class="col-xs-20"
+              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              {{iteration.iterationid}} 
+            </a>
+            </div>
+      </ng-template>
+      <div >
+    </div>
+    
+  </div>
+  </div>
+  
+  <!--Distributor Module ends-->
+
+  </div><!--Row ends-->
+
+  <div class="row"><br></div>
+  <div class="row"><br></div>
+  <div class="row"><br></div> 
+<!--Filegen module begins-->
+  <div class="row" style="background-color:rgb(113, 107, 136);color: white;text-align: center;height: 30px;"><span style="margin-left: 50%">Filegenerator</span></div>
+  <div class="row"><br></div>
+  <div class="row"><br></div> 
+  <div class="row">
+
+<!-- Filegen UIM begins-->
+      <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+          <h3>UIM</h3>
+          <div  *ngFor="let iteration of iterationids">
+            <div *ngIf="iteration.status == 'Completed';else inprogress">
+            <img src="../../assets/images/completed.png" style="max-height: 20px">      
+            <a  href="" class="col-xs-20"
+            [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+            {{iteration.iterationid}} 
+          </a>
+          </div>
+          <ng-template #inprogress>
+              <div >
+                  <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+                  <a  href="" class="col-xs-20"
+                  [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+                  {{iteration.iterationid}} 
+                </a>
+                </div>
+          </ng-template>
+          <div >
+        </div>
+        
+      </div>
+      </div>
+
+      <!--Filegen UIM ends-->
+
+
+      
+<!-- Filegen BOCB begins-->
+<div style="height:100px;width:100px"></div>
+<div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+    <h3>BOCB</h3>
+    <div  *ngFor="let iteration of iterationids">
+      <div *ngIf="iteration.status == 'Completed';else inprogress">
+      <img src="../../assets/images/completed.png" style="max-height: 20px">      
+      <a  href="" class="col-xs-20"
+      [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+      {{iteration.iterationid}} 
+    </a>
+    </div>
+    <ng-template #inprogress>
+        <div >
+            <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+            <a  href="" class="col-xs-20"
+            [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+            {{iteration.iterationid}} 
+          </a>
+          </div>
+    </ng-template>
+    <div >
+  </div>
+  
+</div>
+</div>
+
+<!--Filegen BOCB ends-->
+
+
+   
+<!-- Filegen Vz450 begins-->
+<div style="height:100px;width:100px"></div> 
+<div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
+    <h3>VZ450</h3>
+    <div  *ngFor="let iteration of iterationids">
+      <div *ngIf="iteration.status == 'Completed';else inprogress">
+      <img src="../../assets/images/completed.png" style="max-height: 20px">      
+      <a  href="" class="col-xs-20"
+      [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+      {{iteration.iterationid}} 
+    </a>
+    </div>
+    <ng-template #inprogress>
+        <div >
+            <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+            <a  href="" class="col-xs-20"
+            [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+            {{iteration.iterationid}} 
+          </a>
+          </div>
+    </ng-template>
+    <div >
+  </div>
+  
+</div>
+</div>
+
+<!--Filegen Vz450 ends-->
+      
+      <!--Filegen  Module ends-->
+
+  </div>
