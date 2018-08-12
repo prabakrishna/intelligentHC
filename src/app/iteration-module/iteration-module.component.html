@@ -1,7 +1,7 @@
 <div class="row color-light" style="border-bottom-style: groove">
 <table style="margin-bottom: 5px">
 <tr>
-  <td>Pick an Iteration Id  </td>
+  <td > <span style="margin-left: 10px">Select an Iteration Id </span> </td>
   <td>
     <form>
     <select  class="color-light"  (change)="pickAnIteration()" [(ngModel)]="iterationId" name="iteration">
@@ -48,12 +48,19 @@
 
 <!--Ecorr Details starts-->
 <div class="row color-light" style="border-bottom-style: groove">
-  Ecorr Details
+  
+  <a  (click)= "showEcorr()" *ngIf="ecorrView == 'true';else hideEcorr">
+    <span style="margin-left:10px">Ecorr Details (Hide) </span></a>
+  <ng-template #hideEcorr>
+      <a  (click)= "showEcorr()" >
+          <span style="margin-left:10px">Ecorr Details (show)</span></a>
+    </ng-template>
   </div>
   <div class="row"></div>
   <div class="row"></div>
   <br>
-<table style="border-style: solid">
+  
+<table style="border-style: solid" *ngIf="ecorrView == 'true'" [@ecorr-div]="ecorrViewStatus">
     <tr style="border-style: solid">
         <td style="border-style: solid">Invoice Seq ID</td>
     <td  style="border-style: solid">Account ID</td>
@@ -74,6 +81,7 @@
       <td style="border-style: solid"> {{ecorrAccount.rhsAmount}}</td>  
     </tr>
   </table> 
+  
 
 
 <!--Ecorr Details starts-->
@@ -84,12 +92,18 @@
 <br>
 <!--Fallout Details starts-->
 <div class="row color-light" style="border-bottom-style: groove">
-  Fallout Details
+  
+    <a  (click)= "showFallout()" *ngIf="falloutView == 'true';else hideFallout">
+        <span style="margin-left:10px">Fallout Details (Hide)</span> </a>
+    <ng-template #hideFallout>
+        <a  (click)= "showFallout()" >
+            <span style="margin-left:10px">Fallout Details (show)</span></a>
+      </ng-template>
   </div>
   <div class="row"></div>
   <div class="row"></div>
   <br>
-<table style="border-style: solid">
+<table style="border-style: solid" *ngIf="falloutView == 'true'" [@fallout-div]="falloutViewStatus">
     <tr style="border-style: solid">
       <td style="border-style: solid">Invoice Seq ID</td>
     <td  style="border-style: solid">Account ID</td>
