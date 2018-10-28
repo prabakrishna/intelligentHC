@@ -9,7 +9,7 @@ function Iteration($http){
     self.getOpen = getOpen;
 
     function getOpen(){
-        return $http.get(  '/api/open')
+        return $http.get('/http://localhost:4000/')
         .then(function(res){
             return res.data;
         });

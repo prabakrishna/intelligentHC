@@ -1,4 +1,9 @@
-export class Ecorr{
-
-    constructor(public invoiceSeqId:string, public accountId:string,public oobRule:string,public oobAmount:string,public lhsAmount:string,public rhsAmount:string){}
+export interface Ecorr{
+    iterationId:number;
+    invoiceSeqId:number;
+    accountId:string;
+    oobRule:string;
+    oobAmount:number;
+    lhsAmount:number;
+    rhsAmount:number;
 }

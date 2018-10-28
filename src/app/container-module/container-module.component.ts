@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Iteration } from '../Models/Iteration.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { MyServiceService } from '../my-service.service';
 import { Router } from '@angular/router';
+import { PgserviceService } from '../pgservice.service';
 
 @Component({
   selector: 'app-container-module',
@@ -36,25 +36,21 @@ import { Router } from '@angular/router';
   ]*/
 })
 export class ContainerModuleComponent implements OnInit {
-
+  region = sessionStorage.getItem("region");
+  env  = sessionStorage.getItem("env");
   status='normal';
-iterationids;
-  /*iterationids : Iteration[]=[
-  new Iteration(10001,0,100,'In Progress'),
-     new Iteration(10002,0,50,'In Progress'),
-     new Iteration(10003,0,100,'Completed'),
-     new Iteration(10001,0,100,'In Progress'),
-     new Iteration(10002,0,50,'In Progress'),
-     new Iteration(10003,0,100,'Completed'),
-  ];*/
+  iterationids : Iteration[];  
 
   change(){
     this.status == 'normal' ? this.status = 'change' : this.status = 'normal';
   }
-  constructor(private myService:MyServiceService, private router:Router) { }
+  constructor(private service:PgserviceService, private router:Router) { }
 
   ngOnInit() {
-    this.iterationids=this.myService.showIterations();
+    this.service.getIterationDetails().subscribe(resp=>{
+      console.log("resp" +resp);
+      this.iterationids = resp;
+    });
   }
 
   sendMetoIteration(iterationid){

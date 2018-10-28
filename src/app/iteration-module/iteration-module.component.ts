@@ -3,6 +3,7 @@ import {Ecorr} from '../Models/Ecorr.model';
 import { FalloutAccount } from '../Models/Fallout.model';
 import {ActivatedRoute} from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { PgserviceService } from '../pgservice.service';
 
 @Component({
   selector: 'app-iteration-module',
@@ -45,11 +46,7 @@ ecorrView = 'false';
 ecorrViewStatus='hide';
 falloutView = 'false';
 falloutViewStatus = 'hide'
- ecorrAccounts : Ecorr[] = [
-  new Ecorr('1234567','1234234510001','OB041','12','5000','3800'),
-  new Ecorr('1234568','3434234510001','OB211','5','89000','84000'),
-  new Ecorr('1234567','8934234510001','OB053','34','7800','7766')
-];
+ ecorrAccounts : Ecorr[] 
 
 falloutAccounts : FalloutAccount[] = [
   new FalloutAccount('14534567','9034234510001','Distributor Exception: RECORD LENGTH VALDATION '),
@@ -59,19 +56,19 @@ falloutAccounts : FalloutAccount[] = [
 
 
 
-  constructor(private route:ActivatedRoute) { 
+  constructor(private route:ActivatedRoute,private service:PgserviceService) { 
 this.route.params.subscribe(res=>this.iterationId=res.id);
 
   }
 
   ngOnInit() {
-
+this.service.getEcorrDetails().subscribe(resp=>this.ecorrAccounts = resp);
   }
 
   pickAnIteration(){
    // this.iterationId = this.iterationSelected.nativeElement.value;
    console.log("inside")
-    //console.log(selectedIter.value);
+    
   }
 
   showAccounts(){

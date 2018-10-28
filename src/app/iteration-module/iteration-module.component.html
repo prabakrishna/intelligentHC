@@ -1,4 +1,5 @@
-<div class="row color-light" style="border-bottom-style: groove">
+<app-regiondisplay></app-regiondisplay>
+<div class="row color-light top-10" style="border-bottom-style: groove">
 <table style="margin-bottom: 5px">
 <tr>
   <td > <span style="margin-left: 10px">Select an Iteration Id </span> </td>
@@ -23,7 +24,7 @@
 <div class="row"></div>
 <br>
 
-<table style="border-style: solid">
+<table style="border-style: solid" *ngIf="iterationId !=null">
     <tr style="border-style: solid">
     <td rowspan="2" style="border-style: solid">{{iterationId}}</td>
     <td style="border-style: solid">Container</td>

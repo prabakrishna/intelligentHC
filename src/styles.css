@@ -19,3 +19,33 @@ a{
     text-decoration: none;
 }
 */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 51, 56);
+    color: white;
+    text-align: center;
+    height:30px;
+}
+
+.heading{
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.left-10{
+    margin-left:10px;
+}
+
+.top-10{
+    margin-top:10px;
+}

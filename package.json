@@ -31,7 +31,10 @@
     "consolidate": "*",
     "dust": "*",
     "dustjs-helpers": "*",
-    "dustjs-linkedin": "*"
+    "dustjs-linkedin": "*",
+    "font-awesome": "*",
+    "body-parser": "^1.17.2",
+    "ngx-pagination": "^3.2.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.0",

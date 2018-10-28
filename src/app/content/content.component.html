@@ -1,0 +1,83 @@
+ <div class="container">
+  <!--<div class="row">
+    <div class="col-md-50">
+    <h2 style="text-align: center">Intelligent Health Check</h2>
+    </div>
+  </div>-->
+<app-regiondisplay></app-regiondisplay>
+<table class="table table-striped top-10">
+  <tr>
+    <th style="text-align: center">Date 
+      <input type="date" name="seldate" [(ngModel)]="seldate">
+       <button class=" btn btn-danger fa fa-search" (click)="filterbydate()"></button>
+    </th> 
+    <th>Iteration Id</th>
+    <th>Account count</th>
+    <th>Container</th>
+    <th>Engine</th>
+    <th>Distributor</th>
+    <th>Filegen</th>
+  </tr>
+  <tr *ngFor="let iteration of iterationids | paginate:{itemsPerPage:4,currentPage:page}">
+    
+    <td>{{iteration.rundate | date:'MM/dd/yyyy'}}</td>
+    <td><a [routerLink]="['/iteration',iteration.iterationid]">{{iteration.iterationid}}</a></td>
+    <td>{{iteration.accountCount}}</td>
+    <td>{{iteration.containerstatus}}</td>
+    <td>{{iteration.enginestatus}}</td>
+    <td>{{iteration.distributorstatus}}</td>
+    <td>{{iteration.filegenstatus}}</td>
+
+  </tr>
+</table>
+<pagination-controls (pageChange) ='page=$event'></pagination-controls>
+<!--
+  <div class="row" [ngStyle]="{backgroundColor:'black'}">
+    <select style="background-color: black;color:white">
+      <option>Region</option>
+      <option>DEV 1</option>
+      <option>DEV 2</option>
+      <option>DEV 3</option>
+    </select>  
+    <a href="#" style="color:white;margin-left:25%"  (click)="showModule()" routerLink=""
+    [ngStyle] = "{color:view === 'module'? 'blue':'white'}">Module view</a>
+    <a href="#" style="color:white;margin-left:25%" (click)="showIterations()" routerLink="iteration/10001"
+    [ngStyle] = "{color:view === 'iteration'? 'blue':'white'}">Iterations view</a>
+  </div>--> 
+  <div class="row"><br></div>
+  <div class="row"><br></div>
+  <div class="row"><br></div>
+  <!--<div *ngIf="view === 'module' else iterationView">
+    <app-container-module></app-container-module>
+  </div>
+  <ng-template #iterationView>
+    
+<app-iteration-module></app-iteration-module>
+  </ng-template>-->
+ 
+  <router-outlet></router-outlet>
+  
+  
+
+
+  <!--
+  <div class="row" *ngFor="let iteration of iterationids">
+    <div class="col-xs-20"><progress value="{{iteration.min}}" max={{iteration.max}} ></progress></div>
+  <div >
+
+    <div class="col-xs-10" 
+    [ngStyle]="{backgroundColor:iteration.status=='In Progress'?'black':'green'}"
+    >{{iteration.status}}</div>
+  
+    <button (click) = "onHover(iteration.iterationid)">Show progress</button>
+  </div>
+</div>-->
+
+
+<!--
+<a routerLink="new-cmp">New Component</a>
+<a routerLink="iteration/10001">New Component1</a>
+
+<br>
+<hr>-->
+</div>

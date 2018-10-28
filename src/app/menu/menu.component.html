@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-md bg-light">
+  <ul class="navbar-nav">
+    <li *ngFor="let link of links" class="nav-item">
+      <a [routerLink]="[link.linkRef]" class=" nav-link">{{link.linkText}}</a></li>
+
+    <li *ngIf="showLogin" class="nav-item"> <a [routerLink]="['login']" class="nav-link" appHighlight>Login</a></li>
+    <li *ngIf="showlogout" class="nav-item"> <a [routerLink]="['logout']" class="nav-link" appHighlight>Logout</a></li>
+  </ul>
+
+</nav>

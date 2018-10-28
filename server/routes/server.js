@@ -47,6 +47,7 @@
             message:null
         }
         router.get("/getIterationList",(req,res)=>{
+            alert(111);
             pool.connect();
             pool.query("select * from Iteration", function (err,result){
                 if(err){

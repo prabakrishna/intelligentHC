@@ -1,5 +1,12 @@
-export class Iteration{
+export interface Iteration{
     
-
-    constructor(public iterationid:number,public min:number,public max:number,public status:string){}
+iterationid:number;
+status:string;
+rundate:Date;
+containerstatus:string;
+enginestatus:string;
+distributorstatus:string;
+filegenstatus:string;
+accountCount:number;
+    
 }
