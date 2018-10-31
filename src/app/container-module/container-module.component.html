@@ -9,7 +9,7 @@
         
         <img src="../../assets/completed.png" style="max-height: 20px"> 
        
-        <a  href="#" class="col-xs-20" (click)="sendMetoIteration(iteration.iterationid)" routerLink="iteration/10001"
+        <a  class="col-xs-20"  [routerLink]="['/iteration',iteration.iterationid]"
         [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
         {{iteration.iterationid}} 
       </a>

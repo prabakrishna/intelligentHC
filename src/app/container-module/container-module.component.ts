@@ -36,8 +36,7 @@ import { PgserviceService } from '../pgservice.service';
   ]*/
 })
 export class ContainerModuleComponent implements OnInit {
-  region = sessionStorage.getItem("region");
-  env  = sessionStorage.getItem("env");
+ 
   status='normal';
   iterationids : Iteration[];  
 
@@ -47,7 +46,7 @@ export class ContainerModuleComponent implements OnInit {
   constructor(private service:PgserviceService, private router:Router) { }
 
   ngOnInit() {
-    this.service.getIterationDetails().subscribe(resp=>{
+    this.service.getIterationDetailsFromJson().subscribe(resp=>{
       console.log("resp" +resp);
       this.iterationids = resp;
     });

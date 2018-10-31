@@ -1,3 +1,4 @@
+
 export interface Iteration{
     
 iterationid:number;
@@ -8,5 +9,7 @@ enginestatus:string;
 distributorstatus:string;
 filegenstatus:string;
 accountCount:number;
+
+
     
 }

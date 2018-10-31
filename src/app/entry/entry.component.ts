@@ -53,7 +53,7 @@ export class EntryComponent implements OnInit {
   submit(val:Region){
   sessionStorage.setItem("region",val.region);
   sessionStorage.setItem("env",val.env);
-this.router.navigate(["Home"]);
+  this.router.navigate(["Home"]);
   }
 
 }

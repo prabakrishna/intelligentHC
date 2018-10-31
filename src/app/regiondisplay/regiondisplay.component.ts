@@ -17,7 +17,7 @@ export class RegiondisplayComponent implements OnInit,AfterViewInit {
   
   ngAfterViewInit(): void {
     this.region = sessionStorage.getItem("region");
-    this.env  = sessionStorage.getItem("env");
+    this.env  = sessionStorage.getItem("env");   
     this.changeRef.detectChanges();
   }
 

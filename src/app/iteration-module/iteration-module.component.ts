@@ -62,7 +62,7 @@ this.route.params.subscribe(res=>this.iterationId=res.id);
   }
 
   ngOnInit() {
-this.service.getEcorrDetails().subscribe(resp=>this.ecorrAccounts = resp);
+this.service.getEcorrListFormJson().subscribe(resp=>this.ecorrAccounts = resp);
   }
 
   pickAnIteration(){

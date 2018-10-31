@@ -14,7 +14,10 @@ export class ContentComponent implements OnInit {
 page=0;
   constructor(private service:PgserviceService){}
   ngOnInit(): void {
-    this.service.getIerationList().subscribe(resp => this.iterationids = resp);
+    //this.service.getIerationList().subscribe(resp => this.iterationids = resp);
+  this.service.getIterationDetailsFromJson().subscribe(resp=> this.iterationids = resp);
+
+    
   }
   title = 'app';
   view = '';

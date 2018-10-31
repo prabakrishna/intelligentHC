@@ -13,7 +13,7 @@
           <div class="form-group">
               <label for="env">Environment</label>
               <select name="env" [(ngModel)]="env" class="form-control">
-                <option *ngFor="let en of envs">
+                <option *ngFor="let en of envs" value={{en}}>
                   {{en}}
                 </option>
               </select>
