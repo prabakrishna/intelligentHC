@@ -5,21 +5,21 @@
     <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
       <h3>Container</h3>
       <div  *ngFor="let iteration of iterationids" >
-        <div *ngIf="iteration.status == 'Completed';else inprogress">
+        <div *ngIf="iteration.containerstatus == '10002';else inprogress">
         
-        <img src="../../assets/images/completed.png" style="max-height: 20px"> 
+        <img src="./assets/images/completed.png" style="max-height: 20px"> 
        
         <a  class="col-xs-20"  [routerLink]="['/iteration',iteration.iterationid]"
-        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        [ngStyle]="{color:iteration.containerstatus=='10001'?'orange':'green'}">
         {{iteration.iterationid}} 
       </a>
     
       </div>
       <ng-template #inprogress>
           <div >
-              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
               <a  href="" class="col-xs-20"
-              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              [ngStyle]="{color:iteration.containerstatus=='10001'?'orange':'green'}">
               {{iteration.iterationid}} 
             </a>
             </div>
@@ -35,18 +35,18 @@
   <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
       <h3>Engine</h3>
       <div  *ngFor="let iteration of iterationids">
-        <div *ngIf="iteration.status == 'Completed';else inprogress">
-        <img src="../../assets/images/completed.png" style="max-height: 20px">      
+        <div *ngIf="iteration.enginestatus == '20002';else inprogress">
+        <img src="./assets/images/completed.png" style="max-height: 20px">      
         <a  href="" class="col-xs-20"
-        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        [ngStyle]="{color:iteration.enginestatus=='20001'?'orange':'green'}">
         {{iteration.iterationid}} 
       </a>
       </div>
       <ng-template #inprogress>
           <div >
-              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
               <a  href="" class="col-xs-20"
-              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              [ngStyle]="{color:iteration.enginestatus=='20001'?'orange':'green'}">
               {{iteration.iterationid}} 
             </a>
             </div>
@@ -66,18 +66,18 @@
   <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
       <h3>Distributor</h3>
       <div  *ngFor="let iteration of iterationids">
-        <div *ngIf="iteration.status == 'Completed';else inprogress">
-        <img src="../../assets/images/completed.png" style="max-height: 20px">      
+        <div *ngIf="iteration.distributorstatus == '30002';else inprogress">
+        <img src="./assets/images/completed.png" style="max-height: 20px">      
         <a   class="col-xs-20" (click)="sendMetoIteration(iteration.iterationid)"
-        [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+        [ngStyle]="{color:iteration.distributorstatus=='30001'?'orange':'green'}">
         {{iteration.iterationid}} 
       </a>
       </div>
       <ng-template #inprogress>
           <div >
-              <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+              <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
               <a  href="" class="col-xs-20"
-              [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+              [ngStyle]="{color:iteration.distributorstatus=='30001'?'orange':'green'}">
               {{iteration.iterationid}} 
             </a>
             </div>
@@ -105,18 +105,18 @@
       <div class="col-xs-50" style="height: auto;width: 300px; border-style: groove;text-align: center ">
           <h3>UIM</h3>
           <div  *ngFor="let iteration of iterationids">
-            <div *ngIf="iteration.status == 'Completed';else inprogress">
-            <img src="../../assets/images/completed.png" style="max-height: 20px">      
+            <div *ngIf="iteration.enginestatus == '20002';else inprogress">
+            <img src="./assets/images/completed.png" style="max-height: 20px">      
             <a  href="" class="col-xs-20"
-            [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+            [ngStyle]="{color:iteration.containerstatus=='20001'?'orange':'green'}">
             {{iteration.iterationid}} 
           </a>
           </div>
           <ng-template #inprogress>
               <div >
-                  <img src="../../assets/images/inprogress.gif" style="max-height: 20px">      
+                  <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
                   <a  href="" class="col-xs-20"
-                  [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
+                  [ngStyle]="{color:iteration.enginestatus=='20001'?'orange':'green'}">
                   {{iteration.iterationid}} 
                 </a>
                 </div>
@@ -137,7 +137,7 @@
     <h3>BOCB</h3>
     <div  *ngFor="let iteration of iterationids">
       <div *ngIf="iteration.status == 'Completed';else inprogress">
-      <img src="../../assets/completed.png" style="max-height: 20px">      
+      <img src="./assets/images/completed.png" style="max-height: 20px">      
       <a  href="" class="col-xs-20"
       [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
       {{iteration.iterationid}} 
@@ -145,7 +145,7 @@
     </div>
     <ng-template #inprogress>
         <div >
-            <img src="../../assets/inprogress.gif" style="max-height: 20px">      
+            <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
             <a  href="" class="col-xs-20"
             [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
             {{iteration.iterationid}} 
@@ -168,7 +168,7 @@
     <h3>VZ450</h3>
     <div  *ngFor="let iteration of iterationids">
       <div *ngIf="iteration.status == 'Completed';else inprogress">
-      <img src="../../assets/completed.png" style="max-height: 20px">      
+      <img src="./assets/images/completed.png" style="max-height: 20px">      
       <a  href="" class="col-xs-20"
       [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
       {{iteration.iterationid}} 
@@ -176,7 +176,7 @@
     </div>
     <ng-template #inprogress>
         <div >
-            <img src="../../assets/inprogress.gif" style="max-height: 20px">      
+            <img src="./assets/images/inprogress.gif" style="max-height: 20px">      
             <a  href="" class="col-xs-20"
             [ngStyle]="{color:iteration.status=='In Progress'?'orange':'green'}">
             {{iteration.iterationid}} 
