@@ -1,0 +1,30 @@
+[
+    {
+        "iterationId":10001,
+        "invoiceSeqId":100001,
+        "accountId":"2345612390001",
+        "oobRule":"OB041",
+        "oobAmount":245,
+        "lhsAmount":1245,
+        "rhsAmount":1000
+    },
+    {
+        "iterationId":10002,
+        "invoiceSeqId":100002,
+        "accountId":"2345456390001",
+        "oobRule":"OB041",
+        "oobAmount":45,
+        "lhsAmount":1245,
+        "rhsAmount":1200
+    },
+    {
+        "iterationId":10001,
+        "invoiceSeqId":100003,
+        "accountId":"2311612390001",
+        "oobRule":"OB211",
+        "oobAmount":7,
+        "lhsAmount":345,
+        "rhsAmount":238
+    }
+    
+]
