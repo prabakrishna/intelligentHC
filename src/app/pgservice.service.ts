@@ -14,8 +14,8 @@ export class PgserviceService implements OnInit{
     
   baseURL = "http://localhost:4000"
   jsonUrl= "http://localhost:3000";
-  iterationjsonUrl ="/assets/data/iteration.json";
-  ecorrjsonUrl = "/assets/data/ecorr.json";
+  iterationjsonUrl ="./assets/data/iteration.json";
+  ecorrjsonUrl = "./assets/data/ecorr.json";
   constructor(private http:HttpClient ) {
 
   }
@@ -44,12 +44,14 @@ export class PgserviceService implements OnInit{
     return this.http.get<Ecorr[]>(this.jsonUrl+"/EcorrList");
   }
 
-  getIterationDetailsFromJson() :Observable<Iteration[]>{
-    return this.http.get<Iteration[]>(this.iterationjsonUrl );
+  getIterationDetailsFromJson() {
+   return this.http.get<Iteration[]>(this.iterationjsonUrl );
+
   }
 
-  getEcorrListFormJson():Observable<Ecorr[]>{
+  getEcorrListFormJson(){
     return this.http.get<Ecorr[]>(this.ecorrjsonUrl);
+   
 
 }
 }
